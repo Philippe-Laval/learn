@@ -82,6 +82,8 @@ void Test93()
     std::copy(v.begin(), v.end(),
         //Will print values to standard output as integers delimited by " -- ".
         std::ostream_iterator<int>(std::cout, " -- "));
+
+    std::cout << std::endl;
 }
 
 /// C Iterators (Pointers)

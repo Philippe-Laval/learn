@@ -8,6 +8,8 @@
 #include "BitManipulation.h"
 #include "Arrays.h"
 #include "Iterators.h"
+#include "BasicInputoutput.h"
+#include "Loops.h"
 
 int main() {
     // This is a single-line comment.
@@ -27,7 +29,7 @@ int main() {
 
 #define something true
 
-#if something==true
+#if something == true
     std::cout << TRUE << std::endl;
 #else
     std::cout << FALSE << std::endl;
@@ -40,9 +42,9 @@ int main() {
     //std::cout << i Mul j << std::endl;
 
     //struct S s1;
-   // s1 = new S();
+    // s1 = new S();
 
-   //T t1;
+    //T t1;
 
     Test30();
     TestUnary();
@@ -62,7 +64,13 @@ int main() {
     Test92();
     Test93();
 
-   return 0;
+    // Test100();
+    Test110();
+    Test111();
+
+
+
+    return 0;
 }
 
 

@@ -1,9 +1,9 @@
 # ninja log v5
 3	542	6800372637576558	CMakeFiles/untitled1.dir/main.cpp.obj	acba9f597eb92cf3
-3	169	6801430437986760	build.ninja	404373f2b68d6f7d
+3	169	6801436325569377	build.ninja	404373f2b68d6f7d
 7	85	6800496139812601	CMakeFiles/learn.dir/Literals.cpp.obj	e97bf382d30f698b
-4	814	6801427325710156	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
-1841	2067	6801427338244047	learn.exe	b5fc7fe990854dc6
+3	634	6801432845085439	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+1286	1479	6801432853452999	learn.exe	d019c2f818ba92df
 6	73	6800480970524513	CMakeFiles/learn.dir/Lib.cpp.obj	b8fb7f9a4f9f0a25
 4	645	6800507800102270	CMakeFiles/learn.dir/OperatorPrecedence.cpp.obj	a26b6342b363dec2
 11	608	6800506266681518	CMakeFiles/learn.dir/FloatingPointArithmetic.cpp.obj	19ba60712ab78da3
@@ -11,4 +11,18 @@
 3	533	6800520527067176	CMakeFiles/learn.dir/BitOperators.cpp.obj	7f10342b3c13fedb
 15	888	6801202024621424	CMakeFiles/learn.dir/BitFields.cpp.obj	f398bc2f3d7c9399
 7	1243	6801387048046661	CMakeFiles/learn.dir/Arrays.cpp.obj	7309eb557aaf0e59
-8	1841	6801427336014044	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+11	1286	6801432851562940	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+8	628	6801432845015448	CMakeFiles/learn.dir/BasicInputoutput.cpp.obj	3a35de4c965a6f92
+5	752	6801438256891795	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+9	853	6801438257911756	CMakeFiles/learn.dir/Loops.cpp.obj	ab37b4b7f830db57
+853	1051	6801438259819462	learn.exe	81fefb17355ba6d4
+3	1231	6801439659558374	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+1231	1420	6801439661408516	learn.exe	81fefb17355ba6d4
+3	714	6801442088810747	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+8	828	6801442089970746	CMakeFiles/learn.dir/Loops.cpp.obj	ab37b4b7f830db57
+828	1044	6801442092030711	learn.exe	81fefb17355ba6d4
+3	570	6801442758065488	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+7	671	6801442759075467	CMakeFiles/learn.dir/Loops.cpp.obj	ab37b4b7f830db57
+671	862	6801442760908055	learn.exe	81fefb17355ba6d4
+4	748	6801444788856632	CMakeFiles/learn.dir/Loops.cpp.obj	ab37b4b7f830db57
+749	953	6801444790836777	learn.exe	81fefb17355ba6d4
