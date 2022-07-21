@@ -1,0 +1,24 @@
+# ninja log v5
+3	542	6800372637576558	CMakeFiles/untitled1.dir/main.cpp.obj	acba9f597eb92cf3
+3	169	6801380299311399	build.ninja	404373f2b68d6f7d
+7	85	6800496139812601	CMakeFiles/learn.dir/Literals.cpp.obj	e97bf382d30f698b
+3	548	6801370746154063	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+549	679	6801370747394020	learn.exe	3ad9af23a40609f5
+6	73	6800480970524513	CMakeFiles/learn.dir/Lib.cpp.obj	b8fb7f9a4f9f0a25
+4	645	6800507800102270	CMakeFiles/learn.dir/OperatorPrecedence.cpp.obj	a26b6342b363dec2
+11	608	6800506266681518	CMakeFiles/learn.dir/FloatingPointArithmetic.cpp.obj	19ba60712ab78da3
+10	906	6801202024771431	CMakeFiles/learn.dir/BitManipulation.cpp.obj	33bf03e1207dcd61
+3	533	6800520527067176	CMakeFiles/learn.dir/BitOperators.cpp.obj	7f10342b3c13fedb
+15	888	6801202024621424	CMakeFiles/learn.dir/BitFields.cpp.obj	f398bc2f3d7c9399
+7	1038	6801370631166329	CMakeFiles/learn.dir/Arrays.cpp.obj	7309eb557aaf0e59
+3	653	6801387042175500	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+11	1154	6801387047166937	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+7	1243	6801387048046661	CMakeFiles/learn.dir/Arrays.cpp.obj	7309eb557aaf0e59
+1243	1415	6801387049706681	learn.exe	b5fc7fe990854dc6
+3	1015	6801390390854631	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+1015	1171	6801390392345635	learn.exe	b5fc7fe990854dc6
+3	1016	6801391125833077	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+1017	1174	6801391127333027	learn.exe	b5fc7fe990854dc6
+3	774	6801395883996676	CMakeFiles/learn.dir/main.cpp.obj	ccee8450b76b3d41
+4	1034	6801396253274299	CMakeFiles/learn.dir/Iterators.cpp.obj	952fb4a95a4dfd57
+1035	1194	6801396254791738	learn.exe	b5fc7fe990854dc6
