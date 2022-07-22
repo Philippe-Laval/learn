@@ -121,6 +121,12 @@ build CMakeFiles/learn.dir/Loops.cpp.obj: CXX_COMPILER__learn_Debug C$:/Users/ph
   OBJECT_DIR = CMakeFiles\learn.dir
   OBJECT_FILE_DIR = CMakeFiles\learn.dir
 
+build CMakeFiles/learn.dir/FileIO.cpp.obj: CXX_COMPILER__learn_Debug C$:/Users/philippe/CLionProjects/Learn/FileIO.cpp || cmake_object_order_depends_target_learn
+  DEP_FILE = CMakeFiles\learn.dir\FileIO.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\learn.dir
+  OBJECT_FILE_DIR = CMakeFiles\learn.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target learn
@@ -129,7 +135,7 @@ build CMakeFiles/learn.dir/Loops.cpp.obj: CXX_COMPILER__learn_Debug C$:/Users/ph
 #############################################
 # Link the executable learn.exe
 
-build learn.exe: CXX_EXECUTABLE_LINKER__learn_Debug CMakeFiles/learn.dir/main.cpp.obj CMakeFiles/learn.dir/Lib.cpp.obj CMakeFiles/learn.dir/Literals.cpp.obj CMakeFiles/learn.dir/OperatorPrecedence.cpp.obj CMakeFiles/learn.dir/FloatingPointArithmetic.cpp.obj CMakeFiles/learn.dir/BitOperators.cpp.obj CMakeFiles/learn.dir/BitManipulation.cpp.obj CMakeFiles/learn.dir/BitFields.cpp.obj CMakeFiles/learn.dir/Arrays.cpp.obj CMakeFiles/learn.dir/Iterators.cpp.obj CMakeFiles/learn.dir/BasicInputoutput.cpp.obj CMakeFiles/learn.dir/Loops.cpp.obj
+build learn.exe: CXX_EXECUTABLE_LINKER__learn_Debug CMakeFiles/learn.dir/main.cpp.obj CMakeFiles/learn.dir/Lib.cpp.obj CMakeFiles/learn.dir/Literals.cpp.obj CMakeFiles/learn.dir/OperatorPrecedence.cpp.obj CMakeFiles/learn.dir/FloatingPointArithmetic.cpp.obj CMakeFiles/learn.dir/BitOperators.cpp.obj CMakeFiles/learn.dir/BitManipulation.cpp.obj CMakeFiles/learn.dir/BitFields.cpp.obj CMakeFiles/learn.dir/Arrays.cpp.obj CMakeFiles/learn.dir/Iterators.cpp.obj CMakeFiles/learn.dir/BasicInputoutput.cpp.obj CMakeFiles/learn.dir/Loops.cpp.obj CMakeFiles/learn.dir/FileIO.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\learn.dir
