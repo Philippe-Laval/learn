@@ -44,6 +44,8 @@ void Test111()
     {
         val = true;
     }
+
+    std::cout << std::endl;
 }
 
 void Test112()

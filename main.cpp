@@ -10,6 +10,7 @@
 #include "Iterators.h"
 #include "BasicInputoutput.h"
 #include "Loops.h"
+#include "FileIO.h"
 
 int main() {
     // This is a single-line comment.
@@ -68,7 +69,10 @@ int main() {
     Test110();
     Test111();
 
-
+    Test120();
+    Test123();
+    Test125();
+    Test128();
 
     return 0;
 }
