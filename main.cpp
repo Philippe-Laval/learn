@@ -11,11 +11,19 @@
 #include "BasicInputoutput.h"
 #include "Loops.h"
 #include "FileIO.h"
+#include "Metaprogramming.h"
+
+#include "LanguageUsabilityEnhancements.h"
+
+void Book();
 
 int main() {
     // This is a single-line comment.
     int a; // this also is a single-line comment
     int i; // this is another single-line comment
+
+    Book();
+    return 0;
 
     /*
      * This is a block comment.
@@ -74,7 +82,22 @@ int main() {
     Test125();
     Test128();
 
+    Test160();
+    Test161();
+
     return 0;
 }
+
+void Book()
+{
+    TestNullptr();
+    TestConstexpr();
+    TestIfSwitch();
+    TestInitializerList();
+    TestInitializerList2();
+    TestStructuredBinding();
+}
+
+// 2.3 Type inference
 
 
