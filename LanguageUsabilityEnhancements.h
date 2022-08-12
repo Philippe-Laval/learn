@@ -11,5 +11,13 @@ int TestIfSwitch();
 int TestInitializerList();
 int TestInitializerList2();
 int TestStructuredBinding();
+int TestInitializerList3();
+int TestDecltype();
+int TestTailTypeInference();
+int TestDecltypeAuto();
+int TestIfConstexpr();
+int TestLoop();
+int TestTemplate();
+int TestTypeAliasTemplates();
 
 #endif //LEARN_LANGUAGEUSABILITYENHANCEMENTS_H

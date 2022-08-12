@@ -96,8 +96,14 @@ void Book()
     TestInitializerList();
     TestInitializerList2();
     TestStructuredBinding();
+    TestInitializerList3();
+    TestDecltype();
+    TestTailTypeInference();
+    TestDecltypeAuto();
+    TestIfConstexpr();
+    TestLoop();
+    TestTemplate();
+    TestTypeAliasTemplates();
 }
-
-// 2.3 Type inference
 
 

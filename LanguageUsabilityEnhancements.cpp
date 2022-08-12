@@ -186,3 +186,214 @@ int TestStructuredBinding() {
     std::cout << x << ", " << y << ", " << z << std::endl;
     return 0;
 }
+
+// 2.3 Type inference
+
+// auto
+
+int add(auto x, auto y) {
+    return x+y;
+}
+
+int TestInitializerList3() {
+    MagicFoo magicFoo = {1, 2, 3, 4, 5};
+    std::cout << "magicFoo: ";
+    for (auto it = magicFoo.vec.begin(); it != magicFoo.vec.end(); ++it) {
+        std::cout << *it << ", ";
+    }
+    std::cout << std::endl;
+
+    auto i = 5; // type int
+    auto j = 6; // type int
+
+    auto arr = new auto(10); // arr as int *
+
+    std::cout << add(i, j) << std::endl;
+
+    return 0;
+}
+
+// decltype
+
+int TestDecltype()
+{
+    auto x = 1;
+    auto y = 2;
+    decltype(x+y) z;
+
+    if (std::is_same<decltype(x), int>::value)
+        std::cout << "type x == int" << std::endl;
+    if (std::is_same<decltype(x), float>::value)
+        std::cout << "type x == float" << std::endl;
+    if (std::is_same<decltype(x), decltype(z)>::value)
+        std::cout << "type z == type x" << std::endl;
+
+
+    return 0;
+}
+
+// tail type inference
+
+template<typename R, typename T, typename U>
+R add(T x, U y) {
+    return x+y;
+}
+
+template<typename T, typename U>
+auto add2(T x, U y) -> decltype(x+y){
+    return x + y;
+}
+
+template<typename T, typename U>
+auto add3(T x, U y){
+    return x + y;
+}
+
+int TestTailTypeInference() {
+
+    auto w = add2<int, double>(1, 2.0);
+    if (std::is_same<decltype(w), double>::value) {
+        std::cout << "w is double: ";
+    }
+    std::cout << w << std::endl;
+
+    // after c++14
+    auto q = add3<double, int>(1.0, 2);
+    std::cout << "q: " << q << std::endl;
+
+    return 0;
+}
+
+// decltype(auto)
+
+std::string lookup1()
+{
+    return "test1";
+}
+
+std::string test2 = "test2";
+
+std::string& lookup2()
+{
+    return test2;
+}
+
+std::string look_up_a_string_1() {
+    return lookup1();
+}
+
+std::string& look_up_a_string_2() {
+    return lookup2();
+}
+
+decltype(auto) look_up_a_string_3() {
+    return lookup1();
+}
+
+decltype(auto) look_up_a_string_4() {
+    return lookup2();
+}
+
+int TestDecltypeAuto()
+{
+    auto result1 = look_up_a_string_1();
+    auto result2 = look_up_a_string_2();
+    auto result3 = look_up_a_string_3();
+    auto result4 = look_up_a_string_4();
+
+    return 0;
+}
+
+// 2.4 Control flow
+
+// if constexpr
+
+template<typename T>
+auto print_type_info(const T& t) {
+    if constexpr (std::is_integral<T>::value) {
+        return t + 1;
+    } else {
+        return t + 0.001;
+    }
+}
+
+int TestIfConstexpr() {
+    std::cout << print_type_info(5) << std::endl;
+    std::cout << print_type_info(3.14) << std::endl;
+
+    return 0;
+}
+
+// Range-based for loop
+
+int TestLoop() {
+
+    std::vector<int> vec = {1, 2, 3, 4};
+
+    if (auto itr = std::find(vec.begin(), vec.end(), 3); itr != vec.end())
+    {
+        *itr = 4;
+    }
+
+    for (auto element: vec) {
+        std::cout << element << std::endl; // read only
+    }
+
+    for (auto &element : vec) {
+        element += 1; // writeable
+    }
+
+    for (auto element : vec)
+        std::cout << element << std::endl; // read only
+
+    return 0;
+}
+
+// 2.5 Templates
+
+template<bool T>
+class MagicType {
+public:
+    bool magic = T;
+};
+
+int TestTemplate()
+{
+    MagicType<true> a1;
+    MagicType<true> a2;
+    MagicType<false> b;
+    MagicType<(1>2)> c;
+
+    std::vector<MagicType<true>> magic1 { a1, a2 };
+    std::vector<MagicType<false>> magic2 { b, c };
+
+    std::cout << magic1[0].magic << std::endl;
+    std::cout << magic2[0].magic << std::endl;
+
+    return 0;
+}
+
+// Type alias templates
+
+template<typename T, typename U>
+class MagicType2 {
+public:
+    T dark;
+    U magic;
+};
+
+template<typename T>
+using TrueDarkMagic = MagicType2<std::vector<T>, std::string>;
+
+int TestTypeAliasTemplates() {
+    TrueDarkMagic<bool> you;
+
+    you.magic = "test";
+    you.dark.push_back(true);
+    you.dark.push_back(false);
+
+    std::cout << you.magic << std::endl;
+    std::cout << you.dark[0] << std::endl;
+
+    return 0;
+}
