@@ -64,8 +64,10 @@ auto Test82() -> int
     }
     sort( a, a + n );
     for( int i = 0; i < n; ++i ) { cout << a[i] << ' '; }
-    cout << '\\n';
+    cout << '\n';
     delete[] a;
+
+    return 0;
 }
 
 void Test83()
@@ -97,5 +99,7 @@ int Test84()
     int const n = a.size();
     for( int i = 0; i < n; ++i ) { cout << a[i] << ' '; }
     cout << '\n';
+
+    return 0;
 }
 

@@ -397,3 +397,215 @@ int TestTypeAliasTemplates() {
 
     return 0;
 }
+
+// Variadic templates
+
+template<typename... Ts> class Magic1;
+
+/*
+class Magic1<int,
+        std::vector<int>,
+        std::map<std::string, std::vector<int>>> darkMagic;
+*/
+
+template<typename Require, typename... Args> class Magic2;
+
+template<typename... Args> void printf(const std::string &str, Args... args);
+
+template<typename... Ts>
+void magic(Ts... args) {
+    std::cout << "Parameter count: " << sizeof...(args) << std::endl;
+}
+
+int TestVariadicTemplates()
+{
+    magic(); // 0
+    magic(1); // 1
+    magic(1, ""); // 2
+
+    return 0;
+}
+
+// Recursive template function
+
+template<typename T0>
+void printf1(T0 value) {
+    std::cout << value << std::endl;
+}
+
+template<typename T, typename... Ts>
+void printf1(T value, Ts... args) {
+    std::cout << value << std::endl;
+    printf1(args...);
+}
+
+int TestRecursiveTemplateFunction() {
+    printf1(1, 2, "123", 1.1);
+    return 0;
+}
+
+// Variable parameter template expansion
+
+template<typename T0, typename... T>
+void printf2(T0 t0, T... t) {
+    std::cout << t0 << std::endl;
+    if constexpr (sizeof...(t) > 0) printf2(t...);
+}
+
+int TestVariableParameterTemplateExpansion() {
+    printf2(1, 2, "123", 1.1);
+    return 0;
+}
+
+// Initialize list expansion
+
+template<typename T, typename... Ts>
+auto printf3(T value, Ts... args) {
+    std::cout << value << std::endl;
+    (void) std::initializer_list<T>{([&args] {
+        std::cout << args << std::endl;
+    }(), value)...};
+}
+
+// Fold expression
+
+template<typename ... T>
+auto sum(T ... t) {
+    return (t + ...);
+}
+
+int TestFold() {
+    std::cout << sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) << std::endl;
+    return 0;
+}
+
+// Non-type template parameter deduction
+
+template <typename T, typename U>
+auto add(T t, U u) {
+    return t+u;
+}
+
+template <typename T, int BufSize>
+class buffer_t {
+public:
+    T& alloc();
+    void free(T& item);
+private:
+    T data[BufSize];
+};
+
+int TestNonTypeTemplateParameterDeduction1() {
+    buffer_t<int, 100> buf; // 100 as template parameter
+    return 0;
+}
+
+template <auto value> void foo() {
+    std::cout << value << std::endl;
+    return;
+}
+
+int TestNonTypeTemplateParameterDeduction2() {
+    foo<10>(); // value as int
+    return 0;
+}
+
+// 2.6 Object-oriented
+
+// Delegate constructor
+
+class Base {
+public:
+    int value1;
+    int value2;
+
+    Base() {
+        value1 = 1;
+    }
+
+    Base(int value) : Base() { // delegate Base() constructor
+        value2 = value;
+    }
+};
+
+int TestDelegateConstructor() {
+    Base b(2);
+    std::cout << b.value1 << std::endl;
+    std::cout << b.value2 << std::endl;
+
+    return 0;
+}
+
+// Inheritance constructor
+
+class Subclass : public Base {
+public:
+    using Base::Base; // inheritance constructor
+};
+
+int TestInheritanceConstructor() {
+    Subclass s(3);
+    std::cout << s.value1 << std::endl;
+    std::cout << s.value2 << std::endl;
+
+    return 0;
+}
+
+// Explicit virtual function overwrite
+
+// override
+
+struct Base2 {
+    virtual void foo(int)
+    {
+        return;
+    }
+};
+
+struct SubClass: Base2 {
+    virtual void foo(int) override; // legal
+    //virtual void foo(float) override; // illegal, no virtual function in super class
+};
+
+// final
+
+struct Base3 {
+    virtual void foo() final;
+};
+
+struct SubClass1 final: Base3 {
+}; // legal
+
+//struct SubClass2 : SubClass1 {
+//}; // illegal, SubClass1 has final
+//
+//struct SubClass3: Base3 {
+//    void foo(); // illegal, foo has final
+//};
+
+// Explicit delete default function
+
+class Magic {
+public:
+    Magic() = default; // explicit let compiler use default constructor
+    Magic& operator=(const Magic&) = delete; // explicit declare refuse constructor
+    Magic(int magic_number);
+};
+
+// Strongly typed enumerations
+
+enum class new_enum : unsigned int {
+    value1,
+    value2,
+    value3 = 100,
+    value4 = 100
+};
+
+int TestStronglyTypedEnumerations()
+{
+    if (new_enum::value3 == new_enum::value4) { // true
+        std::cout << "new_enum::value3 == new_enum::value4" << std::endl;
+    }
+
+    return 0;
+}

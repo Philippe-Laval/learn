@@ -19,5 +19,11 @@ int TestIfConstexpr();
 int TestLoop();
 int TestTemplate();
 int TestTypeAliasTemplates();
-
+int TestVariadicTemplates();
+int TestRecursiveTemplateFunction();
+int TestVariableParameterTemplateExpansion();
+int TestFold();
+int TestDelegateConstructor();
+int TestInheritanceConstructor();
+int TestStronglyTypedEnumerations();
 #endif //LEARN_LANGUAGEUSABILITYENHANCEMENTS_H

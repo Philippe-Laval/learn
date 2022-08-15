@@ -104,6 +104,13 @@ void Book()
     TestLoop();
     TestTemplate();
     TestTypeAliasTemplates();
+    TestVariadicTemplates();
+    TestRecursiveTemplateFunction();
+    TestVariableParameterTemplateExpansion();
+    TestFold();
+    TestDelegateConstructor();
+    TestInheritanceConstructor();
+    TestStronglyTypedEnumerations();
 }
 
 
