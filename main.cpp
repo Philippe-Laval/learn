@@ -14,6 +14,7 @@
 #include "Metaprogramming.h"
 
 #include "LanguageUsabilityEnhancements.h"
+#include "LanguageRuntimeEnhancements.h"
 
 void Book();
 
@@ -88,7 +89,9 @@ int main() {
     return 0;
 }
 
-void Book()
+
+
+void Chapter02()
 {
     TestNullptr();
     TestConstexpr();
@@ -113,4 +116,15 @@ void Book()
     TestStronglyTypedEnumerations();
 }
 
+void Chapter03()
+{
+    lambda_value_capture();
+    lambda_reference_capture();
+    lambda_expression_capture();
+    lambda_generic();
+}
 
+void Book() {
+    //Chapter02();
+    Chapter03();
+}
