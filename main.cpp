@@ -124,6 +124,7 @@ void Chapter03()
     lambda_generic();
     TestFunctionObjectWrapper();
     TestFunctionObjectWrapper2();
+    TestBind();
 }
 
 void Book() {

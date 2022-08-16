@@ -120,3 +120,20 @@ void TestFunctionObjectWrapper2() {
     std::cout << func(10) << std::endl;
     std::cout << func2(10) << std::endl;
 }
+
+// std::bind and std::placeholder
+
+void foo3(int a, int b, int c) {
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << c << std::endl;
+}
+
+void TestBind() {
+    // bind parameter 1, 2 on function foo,
+    // and use std::placeholders::_1 as placeholder for the first parameter.
+    auto bindFoo = std::bind(foo3, std::placeholders::_1, 2, 3);
+    // when call bindFoo, we only need one param left
+    bindFoo(1);
+}
+
