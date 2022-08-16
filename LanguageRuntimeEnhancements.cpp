@@ -135,5 +135,9 @@ void TestBind() {
     auto bindFoo = std::bind(foo3, std::placeholders::_1, 2, 3);
     // when call bindFoo, we only need one param left
     bindFoo(1);
+
+    auto bindFoo2 = std::bind(foo3, 1, 2, 3);
+    // call bindFoo2
+    bindFoo2();
 }
 
