@@ -12,6 +12,7 @@
 #include <tuple>
 #include <memory> // std::make_unique
 #include <utility> // std::move
+#include <functional>
 
 // Chapter 03: Language Runtime Enhancements
 
@@ -77,4 +78,45 @@ void lambda_generic() {
     };
     std::cout << generic(1, 2) << std::endl;
     std::cout << generic(1.1, 2.2) << std::endl;
+}
+
+// 3.2 Function Object Wrapper
+
+// std::function
+
+using foo = void(int); // function pointer
+void functional(foo f) {
+    f(1);
+}
+
+void TestFunctionObjectWrapper()
+{
+    auto f = [](int value) {
+        std::cout << value << std::endl;
+    };
+
+    // When the capture list of a Lambda expression is empty,
+    // the closure object can also be converted to a function pointer value for delivery
+
+    functional(f); // call by function pointer
+    f(1); // call by lambda expression
+}
+
+
+int foo2(int para) {
+    return para;
+}
+
+void TestFunctionObjectWrapper2() {
+
+    // std::function wraps a function that take int parameter and returns int value
+    std::function<int(int)> func = foo2;
+    int important = 10;
+
+    std::function<int(int)> func2 = [&](int value) -> int {
+        return 1+value+important;
+    };
+
+    std::cout << func(10) << std::endl;
+    std::cout << func2(10) << std::endl;
 }

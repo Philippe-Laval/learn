@@ -9,5 +9,7 @@ void lambda_value_capture();
 void lambda_reference_capture();
 void lambda_expression_capture();
 void lambda_generic();
+void TestFunctionObjectWrapper();
+void TestFunctionObjectWrapper2();
 
 #endif //LEARN_LANGUAGERUNTIMEENHANCEMENTS_H

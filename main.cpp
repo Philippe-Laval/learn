@@ -122,6 +122,8 @@ void Chapter03()
     lambda_reference_capture();
     lambda_expression_capture();
     lambda_generic();
+    TestFunctionObjectWrapper();
+    TestFunctionObjectWrapper2();
 }
 
 void Book() {
